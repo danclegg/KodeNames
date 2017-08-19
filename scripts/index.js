@@ -1,5 +1,5 @@
 /*
-Notes: 
+Notes:
 'data' is lazily imported from the html
 'seedrandom' is also imported from html. it gives deterministic random #s based on a seed set in fire()
 */
@@ -14,7 +14,7 @@ var customData = [];
 
 var COLOR_RED = "#ff0000";
 var COLOR_YELLOW = "#ffff00";
-var COLOR_BLUE = "#00eeee";
+var COLOR_BLUE = "#0033ff";
 var COLOR_BLACK = "#808080";
 var COLOR_GREEN = "#009000";
 
@@ -113,7 +113,7 @@ function createNewGame() {
 		$('#board').addClass('blueStarts').removeClass('redStarts');
 	}
 
-	// add neturals 
+	// add neturals
 	for (var i = 0; i < 7; i++) {
 		teams.push(COLOR_YELLOW);
 	}
