@@ -12,7 +12,7 @@ html {
 }
 
 button, input, span#first {
-	font-size : 1.3em;	
+	font-size : 1.3em;
 }
 
 #board {
@@ -84,21 +84,21 @@ button, input, span#first {
 }
 
 #seed {
-	margin-right: 5px;	
+	margin-right: 5px;
 }
 
 #gameMode {
 	margin-left: 5px;
-	margin-right: 5px;	
+	margin-right: 5px;
 }
 
 #reset {
 	margin-left: 5px;
-	margin-right: 5px;	
+	margin-right: 5px;
 }
 #google_translate_element {
 	margin-left: 5px;
-	margin-right: 5px;	
+	margin-right: 5px;
 }
 .ada {
   height: 1px;
@@ -106,7 +106,7 @@ button, input, span#first {
   position: absolute;
   overflow: hidden;
   top: -10px;
- 
+
 }
 
 .redStarts{
@@ -114,7 +114,7 @@ button, input, span#first {
 	border-left-style: solid;
 }
 .blueStarts{
-	border-left: #00eeee;
+	border-left: #0033ff;
 	border-left-style: solid;
 }
 
@@ -126,7 +126,7 @@ button, input, span#first {
 }
 #blueScore{
 	text-align: center;
-	color: #00eeee;
+	color: #0033ff;
 	font-size: 23px;
 	flex-grow: 1;
 }
