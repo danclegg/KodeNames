@@ -130,6 +130,16 @@ button, input, span#first {
 	width: auto;
 }
 
+.skull {
+	width: auto;
+	height: inherit;
+	z-index: -1;
+}
+
+.hidden {
+	display:none;
+}
+
 #redScore{
 	color: #ff0000;
 	font-size: 23px;
