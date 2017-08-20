@@ -118,6 +118,18 @@ button, input, span#first {
 	border-left-style: solid;
 }
 
+.spyHidden {
+	display: none;
+	height:inherit;
+	width: auto;
+}
+
+.spyShowing {
+	display: block;
+	height: inherit;
+	width: auto;
+}
+
 #redScore{
 	color: #ff0000;
 	font-size: 23px;

@@ -13,10 +13,10 @@ var sessionData = [];
 var customData = [];
 
 var COLOR_RED = "#ff0000";
-var COLOR_YELLOW = "#ffff00";
+var COLOR_YELLOW = "#ffcc00";
 var COLOR_BLUE = "#0033ff";
-var COLOR_BLACK = "#808080";
-var COLOR_GREEN = "#009000";
+var COLOR_BLACK = "#333333";
+var COLOR_GREEN = "#99CC99";
 
 //init
 $("#seed").keyup(function() {
@@ -86,7 +86,7 @@ function createNewGame() {
 		var word = sessionData[randomNumber];
 		removeItem(sessionData, randomNumber);
 		wordsSelected.push(word);
-		trs[i % 5] += "<div class=\"word\" id=\'" + i + "\' onclick=\"clicked(\'" + i + "\')\"><div><a href=\"#\"><span class=\"ada\"></span>" + word + "</a></div></div>";
+		trs[i % 5] += "<div class=\"word\" id=\'" + i + "\' onclick=\"clicked(\'" + i + "\')\"><div><img src=\"assets/Spy.svg\" class=\"spyHidden\"></img><a href=\"#\"><span class=\"ada\"></span>" + word + "</a></div></div>";
 	}
 	//<a href="#"><span class="ada">Washington stimulates economic growth </span>Read me</a>
 	for (var i = 0; i < trs.length; i++) {
@@ -134,19 +134,33 @@ function clicked(value) {
 	} else {
 		//guessers mode
 		var word = wordsSelected[value];
+		var selectorImg = "div[id=" + value + "] img";
+		var selectorA = "div[id=" + value + "] a"
 		if (document.getElementById("confirm").checked) {
 			if (window.confirm("Are sure you want to select '" + word + "'?")) {
+
 				document.getElementById(value).style.backgroundColor = teams[value];
+				document.getElementById(value).getElementsByClassName('ada')[0].style.color = "white";
+				//$(selector).addClass('spyShowing').removeClass('spyHidden');
+				$('#board').addClass('redStarts').removeClass('blueStarts');
 				if (teams[value] == "black") {
 					document.getElementById(value).style.color = "white";
+					document.getElementById(value).getElementsByClassName('ada')[0].style.color = "black";
+					//$(selector).addClass('spyHidden').removeClass('spyShowing');
 				}
 			}
 		} else {
 			document.getElementById(value).style.backgroundColor = teams[value];
+			document.getElementById(value).getElementsByClassName('ada')[0].style.color = "white";
+			//$(selector).addClass('spyShowing').removeClass('spyHidden');
 			if (teams[value] == "black") {
 				document.getElementById(value).style.color = "white";
+				document.getElementById(value).getElementsByClassName('ada')[0].style.color = "black";
+				//$(selector).addClass('spyHidden').removeClass('spyShowing');
 			}
 		}
+		$(selectorImg).addClass('spyShowing').removeClass('spyHidden');
+		$(selectorA).addClass('spyHidden');
 	}
 	updateScore();
 }
@@ -159,7 +173,7 @@ function updateScore() {
 		redScore = 0;
 		$('div.word').each(function() {
 			var color = $(this).css('background-color');
-			if (color === 'rgb(0, 238, 238)') {
+			if (color === 'rgb(0, 51, 255)') {
 				blueScore++;
 			}
 			if (color === 'rgb(255, 0, 0)') {
@@ -169,7 +183,7 @@ function updateScore() {
 	} else {
 		$('div.word').each(function() {
 			var color = $(this).css('background-color');
-			if (color === 'rgb(0, 238, 238)') {
+			if (color === 'rgb(0, 51, 255)') {
 				blueScore--;
 			}
 			if (color === 'rgb(255, 0, 0)') {
