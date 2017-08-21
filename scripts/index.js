@@ -88,7 +88,6 @@ function createNewGame() {
 		wordsSelected.push(word);
 		trs[i % 5] += "<div class=\"word\" id=\'" + i + "\' onclick=\"clicked(\'" + i + "\')\"><div><img src=\"assets/Spy.svg\" class=\"spyHidden\"></img><a href=\"#\"><span class=\"ada\"></span>" + word + "</a></div></div>";
 	}
-	//<a href="#"><span class="ada">Washington stimulates economic growth </span>Read me</a>
 	for (var i = 0; i < trs.length; i++) {
 		document.getElementById("board").innerHTML += '<div class="row">' + trs[i] + '</div>'
 	}
@@ -113,7 +112,7 @@ function createNewGame() {
 		$('#board').addClass('blueStarts').removeClass('redStarts');
 	}
 
-	// add neturals
+	// add bystanders
 	for (var i = 0; i < 7; i++) {
 		teams.push(COLOR_YELLOW);
 	}
